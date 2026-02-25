@@ -16,12 +16,11 @@ Setelah mengikuti sesi ini, peserta diharapkan mampu mencapai target berikut:
     * `<h1>` - `<h6>` untuk judul pengumuman.
     * `<p>` untuk deskripsi atau isi berita.
     * `<a>` untuk tautan "Baca Selengkapnya" atau navigasi.
-    * `<img>` untuk menampilkan poster kegiatan atau visual pengumuman.
 
 ### 2. Implementasi CSS Dasar (The Skin)
 * Menghubungkan file HTML dengan file **CSS External** secara benar.
 * Melakukan styling dasar pada elemen mading:
-    * Mengatur warna teks (`color`) dan latar belakang (`background-color`) sesuai identitas kampus.
+    * Mengatur warna teks (`color`) sesuai identitas kampus.
     * Mengelola tipografi dasar menggunakan `font-family` dan `font-size`.
     * Mengenal konsep jarak dasar melalui `margin` dan `padding` agar tampilan pengumuman lebih rapi.
 
@@ -34,8 +33,6 @@ Setelah mengikuti sesi ini, peserta diharapkan mampu mencapai target berikut:
 ## Struktur File Proyek
 Peserta akan membuat struktur folder awal sebagai berikut:
 - `index.html` (File utama struktur mading)
-- `style.css` (File untuk mengatur desain mading)
-- `/assets` (Folder untuk menyimpan gambar/poster pengumuman)
 
 ---
 > **Catatan:** Pertemuan ini merupakan langkah awal menuju luaran akhir berupa website CMS (Content Management System) yang fungsional.
