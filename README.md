@@ -1,38 +1,44 @@
-# Pertemuan 1: Membangun Pondasi Mading Digital Kampus
+# Pertemuan 2: Layouting Lanjutan & Interaktivitas Visual (CSS3)
 
 ## Deskripsi Kegiatan
-Pada pertemuan pertama ini, kita akan memulai perjalanan membangun sistem **Mading Digital Kampus**. Fokus utama sesi ini adalah memahami bagaimana sebuah website bekerja dari sisi **Frontend** (tampilan) dan bagaimana menyusun kerangka informasi yang terstruktur menggunakan **HTML & CSS Dasar**. 
+Pada pertemuan kedua ini, kita akan meningkatkan kualitas **Mading Digital Kampus** yang telah kita buat sebelumnya. Jika pada pertemuan pertama kita hanya fokus pada struktur dasar, kali ini kita akan belajar bagaimana mengatur tata letak elemen secara profesional menggunakan **Flexbox**, mengontrol posisi elemen yang kompleks dengan **Position**, serta memberikan sentuhan interaksi modern menggunakan fitur **CSS3**.
 
-Peserta akan belajar cara membuat struktur utama website yang akan menjadi wadah informasi atau pengumuman di lingkungan Fakultas Teknik Universitas Mulawarman.
+Tujuannya adalah agar mading digital kita tidak hanya informatif, tetapi juga memiliki pengalaman pengguna (User Experience) yang halus dan menarik.
 
 ---
 
 ## Objektif Pembelajaran
 Setelah mengikuti sesi ini, peserta diharapkan mampu mencapai target berikut:
 
-### 1. Implementasi HTML (The Skeleton)
-* Mampu menyusun struktur dokumen HTML5 yang valid (`<html>`, `<head>`, `<body>`).
-* Menggunakan elemen semantik dasar untuk konten Mading:
-    * `<h1>` - `<h6>` untuk judul pengumuman.
-    * `<p>` untuk deskripsi atau isi berita.
-    * `<a>` untuk tautan "Baca Selengkapnya" atau navigasi.
+### 1. Implementasi Flexbox (Layouting Modern)
+* Memahami konsep **Flex Container** dan **Flex Items**.
+* Menggunakan `display: flex` untuk mengatur elemen agar berjejer secara fleksibel.
+* Mengatur perataan elemen secara horizontal (`justify-content`) dan vertikal (`align-items`) agar konten mading selalu rapi dan presisi di tengah layar.
 
-### 2. Implementasi CSS Dasar (The Skin)
-* Menghubungkan file HTML dengan file **CSS External** secara benar.
-* Melakukan styling dasar pada elemen mading:
-    * Mengatur warna teks (`color`) sesuai identitas kampus.
-    * Mengelola tipografi dasar menggunakan `font-family` dan `font-size`.
-    * Mengenal konsep jarak dasar melalui `margin` dan `padding` agar tampilan pengumuman lebih rapi.
+### 2. Implementasi Position: Relative, Absolute, Sticky
+* **Relative & Absolute:** Mempelajari hubungan "Induk dan Anak" untuk meletakkan elemen dekoratif (seperti Badge "Terbaru") tepat di pojok kartu pengumuman.
+* **Sticky:** Membuat Header website tetap menempel di bagian atas layar meskipun pengguna melakukan *scrolling* ke bawah, sehingga navigasi tetap mudah diakses.
 
-### 3. Workflow Pengembangan
-* Mampu menggunakan kode editor (VS Code) untuk menulis kode secara efektif.
-* Mampu menjalankan dan melihat hasil perubahan kode secara langsung di browser melalui praktik *hands-on*.
+### 3. Implementasi CSS3 (Animasi & Efek)
+* **Transition:** Memberikan efek perubahan yang halus (tidak kaku) saat elemen berubah warna atau bentuk.
+* **Transform:** Menambahkan efek interaktif seperti `scale` (memperbesar) atau `translate` (mengangkat) kartu pengumuman saat diarahkan kursor (hover).
+* **Box Shadow:** Memberikan efek kedalaman (shadow) agar kartu pengumuman terlihat lebih menonjol dan elegan.
 
 ---
 
 ## Struktur File Proyek
-Peserta akan membuat struktur folder awal sebagai berikut:
-- `index.html` (File utama struktur mading)
+Peserta akan melanjutkan file dari pertemuan sebelumnya dengan struktur:
+- `index.html` (Menambahkan elemen Badge dan kontainer pembungkus)
+- `style.css` (Menambahkan logika Flexbox, Position, dan Animasi)
 
 ---
-> **Catatan:** Pertemuan ini merupakan langkah awal menuju luaran akhir berupa website CMS (Content Management System) yang fungsional.
+
+## Ringkasan Kode Baru
+Beberapa properti kunci yang akan dipelajari:
+* `display: flex;`
+* `position: absolute;` (untuk Badge)
+* `position: sticky;` (untuk Header)
+* `transition: all 0.3s ease;`
+* `transform: translateY(-5px);`
+
+> **Catatan:** Kemampuan menguasai tata letak (layouting) adalah kunci utama bagi seorang Frontend Developer sebelum kita masuk ke tahap interaktivitas JavaScript di pertemuan mendatang.

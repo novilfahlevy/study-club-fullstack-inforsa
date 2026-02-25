@@ -2,31 +2,7 @@
 <html>
   <head>
     <title>Mading Digital INFORSA</title>
-    <style>
-      body {
-        font-family: Arial;
-      }
-
-      header h1 span {
-        color: #ffc107;
-      }
-
-      .pengumuman {
-        border: 1px solid #004d40;
-        padding: 20px;
-        margin-bottom: 20px;
-      }
-
-      .pengumuman p.tanggal {
-        font-size: 14px;
-        color: #666;
-      }
-
-      .pengumuman p.deskripsi {
-        font-size: 16px;
-        line-height: 1.6;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <!-- Header -->
@@ -39,25 +15,25 @@
     <main>
       <!-- Pengumuman -->
       <article class="pengumuman">
+        <span class="badge">Terbaru</span>
         <h2>Pendaftaran Study Club Fullstack</h2>
         <p class="tanggal">Diposting pada: 05 Maret 2026</p>
-        <p>
+        <p class="deskripsi">
           Ayo bergabung dan tingkatkan kemampuan web development kalian bersama
           INFORSA!
         </p>
-        <a href="#">Baca Selengkapnya</a>
+        <a href="#" class="btn-selengkapnya">Baca Selengkapnya</a>
       </article>
 
       <!-- Pengumuman -->
-      <article class="pengumuman">
-        <h2>Malam Keakraban</h2>
-        <p class="tanggal">Diposting pada: 21 Maret 2026</p>
+      <article class="pengumuman card-promo">
+        <h2>Pendaftaran Study Club Fullstack</h2>
+        <p class="tanggal">Diposting pada: 05 Maret 2026</p>
         <p class="deskripsi">
-          Malam Keakraban (Makrab) INFORSA akan diadakan pada tanggal 30
-          Maret 2026. Jangan lewatkan kesempatan untuk bersenang-senang dan
-          mempererat tali persaudaraan antar anggota!
+          Ayo bergabung dan tingkatkan kemampuan web development kalian bersama
+          INFORSA!
         </p>
-        <a href="#">Baca Selengkapnya</a>
+        <a href="#" class="btn-selengkapnya">Baca Selengkapnya</a>
       </article>
     </main>
   </body>
