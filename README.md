@@ -1,7 +1,6 @@
 # Pertemuan 2: Layouting Lanjutan & Interaktivitas Visual (CSS3)
 
 ## Objektif Pembelajaran
-Setelah mengikuti sesi ini, peserta diharapkan mampu mencapai target berikut:
 
 ### 1. Implementasi Flexbox (Layouting Modern)
 * Memahami konsep **Flex Container** dan **Flex Items**.
