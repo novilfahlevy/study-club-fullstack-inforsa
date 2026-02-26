@@ -41,6 +41,7 @@ header nav ul li a {
   font-size: 14px;
   transition: 0.3s;
   opacity: 0.8;
+  text-decoration: none;
 }
 
 header nav ul li a:hover {
@@ -102,14 +103,11 @@ main {
   line-height: 1.6;
 }
 
-a {
+.btn-selengkapnya {
   margin-top: 10px;
   color: #004d40;
   font-weight: bold;
   text-decoration: none;
-}
-
-.btn-selengkapnya {
   display: inline-block;
   transition: 0.2s;
 }
