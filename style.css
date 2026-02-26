@@ -25,6 +25,12 @@ header h1 {
   margin-bottom: 0;
 }
 
+@media (max-width: 700px) {
+  header h1 {
+    font-size: 20px; /* Ukuran font lebih kecil untuk layar kecil */
+  }
+}
+
 header h1 span {
   color: #ffc107; /* Aksen warna kuning */
 }
@@ -66,6 +72,12 @@ main {
   transition: all 0.3s ease; /* Transisi halus untuk semua perubahan */
   position: relative; /* Dasar untuk elemen position: absolute di dalamnya */
   cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .pengumuman {
+    width: 80%; /* Lebar responsif untuk layar kecil */
+  }
 }
 
 .pengumuman:hover {
