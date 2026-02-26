@@ -1,115 +1,120 @@
 body {
-    font-family: Arial; /* Styling font dasar */
-    margin: 0;
+  font-family: Arial; /* Styling font dasar */
+  margin: 0;
 }
 
 header {
-    background-color: #004d40; /* Warna hijau FT */
-    padding: 10px 0;
-    color: white;
-    margin-bottom: 40px;
+  background-color: #004d40; /* Warna hijau FT */
+  padding: 10px 0;
+  color: white;
+  margin-bottom: 40px;
 
-    position: sticky;
-    top: 0;
-    z-index: 1000; /* Agar header selalu di atas konten lain */
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Agar header selalu di atas konten lain */
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-    font-size: 26px;
-    margin-bottom: 0;
+  font-size: 26px;
+  margin-bottom: 0;
 }
 
 header h1 span {
-    color: #ffc107; /* Aksen warna kuning */
+  color: #ffc107; /* Aksen warna kuning */
 }
 
 header nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex; /* Membuat menu berjejer ke samping */
-    gap: 20px; /* Jarak antar link menu */
+  list-style: none;
+  padding: 0;
+  display: flex; /* Membuat menu berjejer ke samping */
+  gap: 20px; /* Jarak antar link menu */
 }
 
 header nav ul li a {
-    color: white;
-    font-size: 14px;
-    transition: 0.3s;
-    opacity: 0.8;
+  color: white;
+  font-size: 14px;
+  transition: 0.3s;
+  opacity: 0.8;
 }
 
 header nav ul li a:hover {
-    opacity: 1;
-    color: #ffc107; /* Warna berubah saat disentuh mouse */
+  opacity: 1;
+  color: #ffc107; /* Warna berubah saat disentuh mouse */
 }
 
 main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .pengumuman {
-    border-left: 5px solid #004d40;
-    border-right: 5px solid #004d40;
-    padding: 20px;
-    margin-bottom: 40px;
-    width: 600px;
+  border-left: 5px solid #004d40;
+  border-right: 5px solid #004d40;
+  padding: 20px;
+  margin-bottom: 40px;
+  width: 600px;
 
-    background-color: white;
-    transition: all 0.3s ease; /* Transisi halus untuk semua perubahan */
-    position: relative; /* Dasar untuk elemen position: absolute di dalamnya */
-    cursor: pointer;
+  background-color: white;
+  transition: all 0.3s ease; /* Transisi halus untuk semua perubahan */
+  position: relative; /* Dasar untuk elemen position: absolute di dalamnya */
+  cursor: pointer;
 }
 
 .pengumuman:hover {
-    transform: translateY(-5px); /* CSS3 Transform: Efek mengangkat kartu */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Bayangan saat di-hover */
-    border-color: #ffc107; /* Mengubah warna border saat di-hover */
+  transform: translateY(-5px); /* CSS3 Transform: Efek mengangkat kartu */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Bayangan saat di-hover */
+  border-color: #ffc107; /* Mengubah warna border saat di-hover */
 }
 
 .badge {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    background-color: #ffc107;
-    color: #004d40;
-    padding: 5px 10px;
-    font-size: 12px;
-    font-weight: bold;
-    border-radius: 5px;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #ffc107;
+  color: #004d40;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.pengumuman h2 {
+  color: #004d40;
+  margin-top: 0px;
 }
 
 .pengumuman p.tanggal {
-    font-size: 12px;
-    color: #666;
+  font-size: 12px;
+  color: #666;
 }
 
 .pengumuman p.deskripsi {
-    font-size: 16px;
-    color: #333;
-    line-height: 1.6;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
 }
 
 a {
-    margin-top: 10px;
-    color: #004d40;
-    font-weight: bold;
-    text-decoration: none;
+  margin-top: 10px;
+  color: #004d40;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .btn-selengkapnya {
-    display: inline-block;
-    transition: 0.2s;
+  display: inline-block;
+  transition: 0.2s;
 }
 
 .btn-selengkapnya:hover {
-    letter-spacing: 1px;
-    color: #ffc107;
+  letter-spacing: 1px;
+  color: #ffc107;
 }
