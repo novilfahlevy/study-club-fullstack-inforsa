@@ -18,6 +18,9 @@ Setelah mengikuti sesi ini, peserta diharapkan mampu mencapai target berikut:
 * **Transform:** Menambahkan efek interaktif seperti `scale` (memperbesar) atau `translate` (mengangkat) kartu pengumuman saat diarahkan kursor (hover).
 * **Box Shadow:** Memberikan efek kedalaman (shadow) agar kartu pengumuman terlihat lebih menonjol dan elegan.
 
+### 4. Implementasi Media Query
+* **@media**: untuk mengubah aturan desain CSS di ukuran browser tertentu.
+
 ## Struktur File Proyek
 - `index.html` (Menambahkan elemen Badge dan kontainer pembungkus)
 - `style.css` (Menambahkan logika Flexbox, Position, dan Animasi)
