@@ -1,0 +1,19 @@
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode .pengumuman {
+    background-color: #1e1e1e;
+    color: white;
+    border-color: #ffc107;
+}
+
+body.dark-mode .pengumuman p.deskripsi, 
+body.dark-mode .pengumuman p.tanggal {
+    color: #bbb;
+}
+
+body.dark-mode header {
+    background-color: #002d26;
+}

@@ -45,6 +45,7 @@ header nav ul {
   display: flex; /* Membuat menu berjejer ke samping */
   flex-direction: row;
   gap: 20px; /* Jarak antar link menu */
+  align-items: center;
 }
 
 header nav ul li {
