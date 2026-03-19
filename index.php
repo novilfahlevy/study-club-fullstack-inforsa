@@ -1,7 +1,7 @@
 <?php
 
 require './database/koneksi.php';
-require './database/pengumuman.php';
+require './database/main.php';
 
 $kategori = isset($_GET['kategori']) ? $_GET['kategori'] : null;
 if ($kategori) {
@@ -18,8 +18,8 @@ if ($kategori) {
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mading Digital INFORSA</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="darkmode.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/darkmode.css" />
 </head>
 
 <body>
@@ -31,7 +31,8 @@ if ($kategori) {
         <li><a href="?kategori=akademik">Akademik</a></li>
         <li><a href="?kategori=organisasi">Organisasi</a></li>
         <li><a href="?kategori=event">Event</a></li>
-        <li><a href="pengumuman-tersimpan.html">Tersimpan</a></li>
+        <li><a href="pengumuman-tersimpan.php">Tersimpan</a></li>
+        <li><a href="admin/login.php">Admin</a></li>
         <li><button id="dark-mode-toggle" style="cursor:pointer; border:none; background:none; font-size: 20px;">🌙</button></li>
       </ul>
     </nav>
@@ -69,9 +70,9 @@ if ($kategori) {
     <p>&copy; 2026 Mading Digital FT UNMUL. All rights reserved.</p>
   </footer>
 
-  <script src="darkmode.js"></script>
-  <script src="pencarian.js"></script>
-  <script src="simpan-pengumuman.js"></script>
+  <script src="assets/js/darkmode.js"></script>
+  <script src="assets/js/pencarian.js"></script>
+  <script src="assets/js/simpan-pengumuman.js"></script>
 </body>
 
 </html>

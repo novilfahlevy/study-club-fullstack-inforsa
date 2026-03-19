@@ -1,36 +1,60 @@
-# Pertemuan 2: Layouting Lanjutan & Interaktivitas Visual (CSS3)
+# Pertemuan 4: Backend Dinamis dengan PHP & MySQL
 
 ## Objektif Pembelajaran
 
-### 1. Implementasi Flexbox (Layouting Modern)
-* Memahami konsep **Flex Container** dan **Flex Items**.
-* Menggunakan `display: flex` untuk mengatur elemen agar berjejer secara fleksibel.
-* Menggunakan `flex-direction: row` dan `flex-direction: column` untuk membuat item sejajar secara horizontal maupun vertikal.
-* Mengatur perataan elemen secara horizontal (`justify-content`) dan vertikal (`align-items`) agar konten mading selalu rapi dan presisi di tengah layar.
+### 1. Koneksi Database MySQL dengan PHP (MySQLi)
+* Membuat koneksi ke database `mading_ft_unmul` menggunakan `mysqli`.
+* Memisahkan konfigurasi koneksi ke file `database/koneksi.php` agar dapat di-*require* dari seluruh halaman.
 
-### 2. Implementasi Position: Relative, Absolute, Sticky
-* **Relative & Absolute:** Mempelajari hubungan "Induk dan Anak" untuk meletakkan elemen dekoratif (seperti Badge "Terbaru") tepat di pojok kartu pengumuman.
-* **Sticky:** Membuat Header website tetap menempel di bagian atas layar meskipun pengguna melakukan *scrolling* ke bawah, sehingga navigasi tetap mudah diakses.
+### 2. Pengambilan Data Dinamis dari Database
+* Mengambil seluruh daftar pengumuman dengan `getPengumuman()` menggunakan query `SELECT * FROM pengumuman ORDER BY tanggal DESC`.
+* Memfilter pengumuman berdasarkan kategori (`akademik`, `organisasi`, `event`) menggunakan `getPengumumanByKategori()` dengan *prepared statement* untuk mencegah SQL Injection.
+* Mengambil detail satu pengumuman berdasarkan `slug` menggunakan `getPengumumanBySlug()` dengan *prepared statement*.
 
-### 3. Implementasi CSS3 (Animasi & Efek)
-* **Transition:** Memberikan efek perubahan yang halus (tidak kaku) saat elemen berubah warna atau bentuk.
-* **Transform:** Menambahkan efek interaktif seperti `scale` (memperbesar) atau `translate` (mengangkat) kartu pengumuman saat diarahkan kursor (hover).
-* **Box Shadow:** Memberikan efek kedalaman (shadow) agar kartu pengumuman terlihat lebih menonjol dan elegan.
+### 3. Routing & Halaman Detail Pengumuman
+* Halaman `index.php` menerima parameter `?kategori=` dari URL (`$_GET`) untuk menampilkan pengumuman yang sudah difilter.
+* Halaman `pengumuman.php` menerima parameter `?slug=` untuk menampilkan detail satu pengumuman; redirect ke `index.php` jika slug tidak ditemukan.
 
-### 4. Implementasi Media Query
-* **@media**: untuk mengubah aturan desain CSS di ukuran browser tertentu.
+### 4. Sistem Admin (Autentikasi Sesi)
+* Halaman login (`admin/login.php`) memvalidasi username dan password menggunakan `$_POST` dan fungsi `login()`.
+* Autentikasi berbasis **PHP Session** (`$_SESSION`) di `admin/auth.php`: menyimpan status login dan melindungi halaman admin.
+* Halaman `admin/index.php` dilindungi oleh pengecekan `apakahUserSudahLogin()`; jika belum login, pengguna di-redirect ke halaman login.
+* Fungsi `logout()` menghapus session dan me-redirect ke halaman login.
+
+### 5. Fitur Interaktif dengan JavaScript & localStorage
+* **Pencarian Real-time** (`pencarian.js`): memfilter kartu pengumuman yang tampil di DOM berdasarkan input teks pengguna tanpa reload halaman.
+* **Simpan Pengumuman** (`simpan-pengumuman.js`): menyimpan data pengumuman ke `localStorage` dan mencegah duplikasi. Halaman `pengumuman-tersimpan.php` membaca data dari `localStorage` dan merendernya secara dinamis.
+* **Dark Mode** (`darkmode.js`): toggle tema gelap/terang dengan persistensi menggunakan `localStorage`.
 
 ## Struktur File Proyek
-- `index.html` (Menambahkan elemen Badge dan kontainer pembungkus)
-- `style.css` (Menambahkan logika Flexbox, Position, dan Animasi)
+```
+index.php                    — Halaman utama, daftar pengumuman + filter kategori
+pengumuman.php               — Halaman detail pengumuman (by slug)
+pengumuman-tersimpan.php     — Halaman arsip pengumuman tersimpan (localStorage)
+database/
+    koneksi.php              — Konfigurasi & koneksi MySQLi
+    main.php                 — Fungsi query untuk halaman publik
+    admin.php                — Fungsi query untuk halaman admin
+admin/
+    auth.php                 — Logika autentikasi & manajemen sesi
+    login.php                — Form login admin
+    logout.php               — Proses logout
+    index.php                — Dashboard admin (tabel pengumuman)
+assets/
+    css/
+        style.css            — Gaya halaman publik
+        darkmode.css         — Gaya tema dark mode
+        admin.css            — Gaya halaman admin
+    js/
+        darkmode.js          — Toggle & persistensi dark mode
+        pencarian.js         — Pencarian real-time di sisi klien
+        simpan-pengumuman.js — Simpan & arsip pengumuman via localStorage
+```
 
-## Ringkasan Kode Baru
-Beberapa properti kunci yang akan dipelajari:
-* `display: flex;`
-* `flex-direction: row|column;`
-* `justify-content: center;`
-* `align-items: center;`
-* `position: absolute;`
-* `position: sticky;`
-* `transition: all 0.3s ease;`
-* `transform: translateY(-5px);`
+## Konsep Kunci yang Dipelajari
+* `mysqli` — koneksi dan query ke database MySQL
+* *Prepared Statement* (`prepare`, `bind_param`, `execute`) — mencegah SQL Injection
+* `$_GET`, `$_POST` — mengambil data dari URL dan form
+* `$_SESSION` — manajemen sesi untuk autentikasi
+* `header('Location: ...')` — redirect antar halaman PHP
+* `htmlspecialchars()` — mencegah XSS saat menampilkan data ke HTML
