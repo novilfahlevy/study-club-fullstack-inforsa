@@ -1,36 +1,37 @@
-# Pertemuan 2: Layouting Lanjutan & Interaktivitas Visual (CSS3)
+# Pertemuan 3: Interaktivitas Dinamis dengan JavaScript
 
 ## Objektif Pembelajaran
 
-### 1. Implementasi Flexbox (Layouting Modern)
-* Memahami konsep **Flex Container** dan **Flex Items**.
-* Menggunakan `display: flex` untuk mengatur elemen agar berjejer secara fleksibel.
-* Menggunakan `flex-direction: row` dan `flex-direction: column` untuk membuat item sejajar secara horizontal maupun vertikal.
-* Mengatur perataan elemen secara horizontal (`justify-content`) dan vertikal (`align-items`) agar konten mading selalu rapi dan presisi di tengah layar.
+### 1. Manipulasi DOM
+* Memahami konsep Document Object Model (DOM) dan cara mengakses elemen HTML menggunakan JavaScript.
+* Menggunakan metode seperti `getElementById`, `querySelector`, dan `querySelectorAll` untuk memilih elemen.
+* Mengubah konten dan atribut elemen secara dinamis menggunakan JavaScript.
 
-### 2. Implementasi Position: Relative, Absolute, Sticky
-* **Relative & Absolute:** Mempelajari hubungan "Induk dan Anak" untuk meletakkan elemen dekoratif (seperti Badge "Terbaru") tepat di pojok kartu pengumuman.
-* **Sticky:** Membuat Header website tetap menempel di bagian atas layar meskipun pengguna melakukan *scrolling* ke bawah, sehingga navigasi tetap mudah diakses.
+### 2. Event Handling
+* Menambahkan interaktivitas dengan mendengarkan event seperti `click`, `input`, dan `submit`.
+* Menggunakan fungsi callback untuk menangani event.
+* Mempelajari konsep event bubbling dan event delegation.
 
-### 3. Implementasi CSS3 (Animasi & Efek)
-* **Transition:** Memberikan efek perubahan yang halus (tidak kaku) saat elemen berubah warna atau bentuk.
-* **Transform:** Menambahkan efek interaktif seperti `scale` (memperbesar) atau `translate` (mengangkat) kartu pengumuman saat diarahkan kursor (hover).
-* **Box Shadow:** Memberikan efek kedalaman (shadow) agar kartu pengumuman terlihat lebih menonjol dan elegan.
-
-### 4. Implementasi Media Query
-* **@media**: untuk mengubah aturan desain CSS di ukuran browser tertentu.
+### 3. Penyimpanan Data di Browser
+* Memahami cara kerja `localStorage` dan `sessionStorage`.
+* Menyimpan dan mengambil data dari `localStorage` untuk membuat fitur seperti daftar pengumuman tersimpan.
+* Menghapus data dari penyimpanan browser.
 
 ## Struktur File Proyek
-- `index.html` (Menambahkan elemen Badge dan kontainer pembungkus)
-- `style.css` (Menambahkan logika Flexbox, Position, dan Animasi)
+```
+index.html                    — Halaman utama, daftar pengumuman
+pengumuman-tersimpan.html     — Halaman untuk melihat pengumuman yang disimpan
+assets/
+    css/
+        style.css             — Gaya halaman utama
+    js/
+        main.js               — Logika interaktivitas utama
+        storage.js            — Fitur penyimpanan data di browser
+```
 
 ## Ringkasan Kode Baru
-Beberapa properti kunci yang akan dipelajari:
-* `display: flex;`
-* `flex-direction: row|column;`
-* `justify-content: center;`
-* `align-items: center;`
-* `position: absolute;`
-* `position: sticky;`
-* `transition: all 0.3s ease;`
-* `transform: translateY(-5px);`
+Beberapa konsep kunci yang dipelajari:
+* `document.getElementById` dan `document.querySelector`
+* Event listener (`addEventListener`)
+* `localStorage.setItem` dan `localStorage.getItem`
+* Manipulasi elemen DOM (`innerHTML`, `classList`)
