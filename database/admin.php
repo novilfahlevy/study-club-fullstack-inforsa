@@ -1,5 +1,21 @@
 <?php
 
+function getAkunAdmin($conn, $username)
+{
+    $sql = "SELECT username, password FROM admin WHERE username = ?"; // Only fetch necessary fields
+    $stmt = $conn->prepare($sql);
+
+    if (!$stmt) {
+        return null;
+    }
+
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    return $result && $result->num_rows > 0 ? $result->fetch_assoc() : null;
+}
+
 function mapPengumumanRow($row, $formattedDate = true)
 {
     return [
