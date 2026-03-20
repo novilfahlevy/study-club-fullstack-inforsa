@@ -31,6 +31,9 @@
 index.php                    — Halaman utama, daftar pengumuman + filter kategori
 pengumuman.php               — Halaman detail pengumuman (by slug)
 pengumuman-tersimpan.php     — Halaman arsip pengumuman tersimpan (localStorage)
+layouts/
+    header.php               — Template header, yang dapat digunakan berulang kali
+    footer.php               — Template footer, yang dapat digunakan berulang kali
 database/
     koneksi.php              — Konfigurasi & koneksi MySQLi
     main.php                 — Fungsi query untuk halaman publik
@@ -40,6 +43,9 @@ admin/
     login.php                — Form login admin
     logout.php               — Proses logout
     index.php                — Dashboard admin (tabel pengumuman)
+    layouts/
+        header.php           — Template header, yang dapat digunakan berulang kali
+        footer.php           — Template footer, yang dapat digunakan berulang kali
 assets/
     css/
         style.css            — Gaya halaman publik
