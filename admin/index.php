@@ -19,7 +19,7 @@ $daftarPengumuman = getPengumuman($conn);
 <div class="admin-container">
     <header class="admin-header">
         <div>
-            <h1>Admin Pengumuman</h1>
+            <h1>Halo, <?= $_SESSION['admin_username'] ?>..</h1>
             <p>Kelola data pengumuman untuk website mading.</p>
         </div>
         <div class="header-actions">
