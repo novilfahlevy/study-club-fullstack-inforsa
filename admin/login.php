@@ -19,35 +19,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 ?>
 
-<!doctype html>
-<html lang="id">
+<?php require './layouts/header.php'; ?>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Admin - Mading Digital</title>
-    <link rel="stylesheet" href="../assets/css/admin.css">
-</head>
+<div class="auth-wrapper">
+    <div class="auth-card">
+        <h1>Login Admin</h1>
+        <p>Masuk untuk mengelola data pengumuman.</p>
 
-<body>
-    <div class="auth-wrapper">
-        <div class="auth-card">
-            <h1>Login Admin</h1>
-            <p>Masuk untuk mengelola data pengumuman.</p>
+        <form method="post" class="form-grid">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
 
-            <form method="post" class="form-grid">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" required>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
 
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
+            <button type="submit" class="btn-primary">Login</button>
+        </form>
 
-                <button type="submit" class="btn-primary">Login</button>
-            </form>
-
-            <a href="../index.php" class="link-back">Kembali ke halaman publik</a>
-        </div>
+        <a href="../index.php" class="link-back">Kembali ke halaman publik</a>
     </div>
-</body>
+</div>
 
-</html>
+<?php require './layouts/footer.php'; ?>
