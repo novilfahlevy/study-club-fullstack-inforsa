@@ -28,6 +28,10 @@ $daftarPengumuman = getPengumuman($conn);
         </div>
     </header>
 
+    <div class="toolbar">
+        <a href="tambah.php" class="btn-primary">+ Tambah Pengumuman</a>
+    </div>
+
     <div class="table-wrapper">
         <table>
             <thead>
@@ -36,6 +40,7 @@ $daftarPengumuman = getPengumuman($conn);
                     <th>Judul</th>
                     <th>Tanggal</th>
                     <th>Kategori</th>
+                    <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
@@ -50,6 +55,15 @@ $daftarPengumuman = getPengumuman($conn);
                             <td><?= htmlspecialchars($item['judul'], ENT_QUOTES, 'UTF-8') ?></td>
                             <td><?= htmlspecialchars($item['tanggal'], ENT_QUOTES, 'UTF-8') ?></td>
                             <td><?= htmlspecialchars(ucfirst($item['kategori']), ENT_QUOTES, 'UTF-8') ?></td>
+                            <td>
+                                <div class="action-group">
+                                    <a href="edit.php?slug=<?= urlencode($item['slug']) ?>" class="btn-small btn-edit">Edit</a>
+                                    <form method="post" action="hapus.php" onsubmit="return confirm('Yakin ingin menghapus data ini?');">
+                                        <input type="hidden" name="slug" value="<?= htmlspecialchars($item['slug'], ENT_QUOTES, 'UTF-8') ?>">
+                                        <button type="submit" class="btn-small btn-delete">Hapus</button>
+                                    </form>
+                                </div>
+                            </td>
                         </tr>
                     <?php endforeach; ?>
                 <?php endif; ?>
