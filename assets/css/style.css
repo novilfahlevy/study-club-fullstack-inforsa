@@ -239,3 +239,115 @@ footer p {
 .auth-card .link-back:hover {
   text-decoration: underline;
 }
+
+/* Styling for the comment section */
+.komentar-section {
+  margin-top: 40px;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 600px;
+  box-sizing: border-box;
+  border: 1px solid #eaeaea;
+}
+
+.komentar-section h3 {
+  margin-top: 0;
+  margin-bottom: 25px;
+  color: #004d40;
+  font-size: 22px;
+}
+
+.form-komentar {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.form-komentar label {
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: -10px;
+}
+
+.form-komentar input,
+.form-komentar textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: all 0.3s;
+  font-family: inherit;
+}
+
+.form-komentar input:focus,
+.form-komentar textarea:focus {
+  outline: none;
+  border-color: #004d40;
+  box-shadow: 0 0 0 3px rgba(0, 77, 64, 0.1);
+}
+
+.form-komentar textarea {
+  resize: vertical;
+}
+
+.form-komentar button {
+  width: 100%;
+  padding: 10px;
+  background-color: #0f766e;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-komentar button:hover {
+  background-color: #0d5f5a;
+}
+
+.daftar-komentar {
+  margin-top: 20px;
+}
+
+.daftar-komentar h4 {
+  margin-bottom: 15px;
+  color: #004d40;
+  font-size: 18px;
+}
+
+.komentar {
+  padding: 20px;
+  border: none;
+  border-left: 4px solid #ffc107;
+  border-radius: 8px;
+  background-color: #f9fafb;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.komentar:hover {
+  transform: translateX(5px);
+}
+
+.komentar p {
+  margin: 5px 0;
+  line-height: 1.5;
+  color: #333;
+}
+
+.komentar p strong {
+  color: #004d40;
+  font-size: 15px;
+  display: block;
+  margin-bottom: 2px;
+}

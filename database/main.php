@@ -2,7 +2,7 @@
 
 function getAkunUser($conn, $username)
 {
-    $sql = "SELECT id, username, password FROM pengguna WHERE username = ?"; // Only fetch necessary fields
+    $sql = "SELECT id, username, password FROM pengguna WHERE username = ?";
     $stmt = $conn->prepare($sql);
 
     if (!$stmt) {
@@ -16,9 +16,26 @@ function getAkunUser($conn, $username)
     return $result && $result->num_rows > 0 ? $result->fetch_assoc() : null;
 }
 
+function getAkunUserById($conn, $id)
+{
+    $sql = "SELECT id, username, password FROM pengguna WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+
+    if (!$stmt) {
+        return null;
+    }
+
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    return $result && $result->num_rows > 0 ? $result->fetch_assoc() : null;
+}
+
 function mapPengumumanRow($row, $formattedDate = true)
 {
     return [
+        'id' => $row['id'],
         'judul' => $row['judul'],
         'slug' => $row['slug'],
         'tanggal' => $formattedDate ? date('d F Y', strtotime($row['tanggal'])) : $row['tanggal'],
@@ -87,4 +104,48 @@ function getPengumumanBySlug($conn, $slug)
 
     $stmt->close();
     return null;
+}
+
+function tambahKomentar($conn, $pengumumanId, $penggunaId, $komentar)
+{
+    $sql = "INSERT INTO komentar (pengumuman_id, pengguna_id, komentar) VALUES (?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+
+    if (!$stmt) {
+        return false;
+    }
+
+    $stmt->bind_param("iis", $pengumumanId, $penggunaId, $komentar);
+    $success = $stmt->execute();
+    $stmt->close();
+
+    return $success;
+}
+
+function getKomentarPengumuman($conn, $pengumumanId)
+{
+    $sql = "SELECT komentar, pengguna_id FROM komentar WHERE pengumuman_id = ? ORDER BY id DESC";
+    $stmt = $conn->prepare($sql);
+
+    if (!$stmt) {
+        return [];
+    }
+
+    $stmt->bind_param("i", $pengumumanId);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $komentar = [];
+
+    if ($result && $result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $akunUser = getAkunUserById($conn, $row['pengguna_id']);
+            $komentar[] = [
+                'username' => $akunUser['username'],
+                'komentar' => $row['komentar']
+            ];
+        }
+    }
+
+    $stmt->close();
+    return $komentar;
 }
