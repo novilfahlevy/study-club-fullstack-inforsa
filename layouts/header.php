@@ -1,3 +1,9 @@
+<?php
+
+require_once './auth.php';
+
+?>
+
 <!doctype html>
 <html>
 
@@ -13,7 +19,16 @@
     <header>
         <h1>Mading Digital <span>FT UNMUL</span></h1>
         <nav>
+            <?php if (apakahUserSudahLogin()) : ?>
+                <span>Selamat datang, <?= $_SESSION['user_username'] ?>!</span>
+            <?php endif; ?>
+            
             <ul>
+                <?php if (apakahUserSudahLogin()) : ?>
+                    <li><a href="logout.php">Logout</a></li>
+                <?php else : ?>
+                    <li><a href="login.php">Login</a></li>
+                <?php endif; ?>
                 <li><a href="?kategori=akademik">Akademik</a></li>
                 <li><a href="?kategori=organisasi">Organisasi</a></li>
                 <li><a href="?kategori=event">Event</a></li>

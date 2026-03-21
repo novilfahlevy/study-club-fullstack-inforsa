@@ -39,6 +39,13 @@ header h1 span {
   color: #ffc107; /* Aksen warna kuning */
 }
 
+header nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+}
+
 header nav ul {
   list-style: none;
   padding: 0;
@@ -160,4 +167,75 @@ footer {
 footer p {
   margin: 0;
   font-size: 14px;
+}
+
+/* Styling for the login card */
+.auth-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.auth-card h1 {
+  margin: 0 0 8px;
+  font-size: 24px;
+  color: #004d40; /* Dark green for title */
+}
+
+.auth-card p {
+  margin: 0 0 16px;
+  color: #6b7280; /* Neutral gray for subtitle */
+}
+
+.auth-card .form-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.auth-card input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.auth-card button {
+  width: 100%;
+  padding: 10px;
+  background-color: #0f766e; /* Primary green */
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.auth-card button:hover {
+  background-color: #0d5f5a; /* Darker green on hover */
+}
+
+.auth-card .link-back {
+  display: inline-block;
+  margin-top: 14px;
+  color: #0f766e;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.auth-card .link-back:hover {
+  text-decoration: underline;
 }
