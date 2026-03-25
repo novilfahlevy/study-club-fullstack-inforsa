@@ -2,7 +2,7 @@
 
 require './auth.php';
 
-if (apakahUserSudahLogin()) {
+if (apakahAdminSudahLogin()) {
     header('Location: index.php');
     exit();
 }

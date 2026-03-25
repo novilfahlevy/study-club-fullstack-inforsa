@@ -45,6 +45,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button type="submit" class="btn-primary">Login</button>
         </form>
 
+        <p style="text-align: center; margin: 16px 0 0; font-size: 14px;">
+            Belum punya akun? <a href="register.php" style="color: #0f766e; font-weight: 500;">Daftar di sini</a>
+        </p>
+
         <a href="index.php" class="link-back">Kembali ke beranda</a>
     </div>
 </div>

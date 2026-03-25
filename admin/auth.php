@@ -2,7 +2,7 @@
 
 session_start();
 
-function apakahUserSudahLogin()
+function apakahAdminSudahLogin()
 {
     return isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === true;
 }

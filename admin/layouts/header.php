@@ -9,3 +9,16 @@
 </head>
 
 <body>
+    <?php if (apakahAdminSudahLogin()): ?>
+        <nav class="admin-navbar">
+            <div class="navbar-container">
+                <div class="navbar-brand">
+                    <h2>Admin Mading</h2>
+                </div>
+                <ul class="navbar-menu">
+                    <li><a href="index.php" class="navbar-link">Pengumuman</a></li>
+                    <li><a href="data-pengguna.php" class="navbar-link">Data Pengguna</a></li>
+                </ul>
+            </div>
+        </nav>
+    <?php endif; ?>

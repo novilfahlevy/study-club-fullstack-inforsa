@@ -149,3 +149,72 @@ function getKomentarPengumuman($conn, $pengumumanId)
     $stmt->close();
     return $komentar;
 }
+
+function getDaftarPengguna($conn)
+{
+    $sql = "SELECT id, username, tanggal_mendaftar FROM pengguna ORDER BY tanggal_mendaftar DESC";
+    $result = $conn->query($sql);
+    $pengguna = [];
+
+    if ($result && $result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $pengguna[] = [
+                'id' => $row['id'],
+                'username' => $row['username'],
+                'tanggal_mendaftar' => $row['tanggal_mendaftar']
+            ];
+        }
+    }
+
+    return $pengguna;
+}
+
+function usernameExist($conn, $username)
+{
+    $sql = "SELECT username FROM pengguna WHERE username = ? LIMIT 1";
+    $stmt = $conn->prepare($sql);
+
+    if (!$stmt) {
+        return false;
+    }
+
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $exist = $result && $result->num_rows > 0;
+    $stmt->close();
+
+    return $exist;
+}
+
+function tambahPengguna($conn, $username, $password)
+{
+    $sql = "INSERT INTO pengguna (username, password) VALUES (?, ?)";
+    $stmt = $conn->prepare($sql);
+
+    if (!$stmt) {
+        return false;
+    }
+
+    $stmt->bind_param("ss", $username, $password);
+    $success = $stmt->execute();
+    $stmt->close();
+
+    return $success;
+}
+
+function hapusPengguna($conn, $id)
+{
+    $sql = "DELETE FROM pengguna WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+
+    if (!$stmt) {
+        return false;
+    }
+
+    $stmt->bind_param("i", $id);
+    $success = $stmt->execute();
+    $stmt->close();
+
+    return $success;
+}
