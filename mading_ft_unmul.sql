@@ -11,7 +11,7 @@ CREATE TABLE `admin` (
   `username` varchar(250) NOT NULL,
   `password` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Insert admin data
 INSERT INTO `admin` (`id`, `username`, `password`) VALUES
@@ -25,9 +25,9 @@ CREATE TABLE `pengumuman` (
   `tanggal` datetime NOT NULL,
   `deskripsi` text NOT NULL,
   `belum_dibaca` tinyint(1) NOT NULL DEFAULT '1',
-  `kategori` enum('akademik','organisasi','event','umum') CHARACTER SET utf8mb4 COLLATE=utf8mb4_0900_ai_ci NOT NULL DEFAULT 'umum',
+  `kategori` enum('akademik','organisasi','event','umum') CHARACTER SET utf8mb4 COLLATE=utf8mb4_unicode_ci NOT NULL DEFAULT 'umum',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Insert pengumuman data
 INSERT INTO `pengumuman` (`id`, `judul`, `slug`, `tanggal`, `deskripsi`, `belum_dibaca`, `kategori`) VALUES
