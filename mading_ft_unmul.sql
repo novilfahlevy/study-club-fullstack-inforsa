@@ -11,7 +11,7 @@ CREATE TABLE `admin` (
   `username` varchar(250) NOT NULL,
   `password` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Insert admin data
 INSERT INTO `admin` (`id`, `username`, `password`) VALUES
@@ -24,7 +24,7 @@ CREATE TABLE `pengguna` (
   `password` text NOT NULL,
   `tanggal_mendaftar` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Create pengumuman table with constraints
 CREATE TABLE `pengumuman` (
@@ -34,9 +34,9 @@ CREATE TABLE `pengumuman` (
   `tanggal` datetime NOT NULL,
   `deskripsi` text NOT NULL,
   `belum_dibaca` tinyint(1) NOT NULL DEFAULT '1',
-  `kategori` enum('akademik','organisasi','event','umum') CHARACTER SET utf8mb4 COLLATE=utf8mb4_0900_ai_ci NOT NULL DEFAULT 'umum',
+  `kategori` enum('akademik','organisasi','event','umum') NOT NULL DEFAULT 'umum',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Insert pengumuman data
 INSERT INTO `pengumuman` (`id`, `judul`, `slug`, `tanggal`, `deskripsi`, `belum_dibaca`, `kategori`) VALUES
@@ -55,6 +55,6 @@ CREATE TABLE `komentar` (
   KEY `fk_komentar_pengguna` (`pengguna_id`),
   CONSTRAINT `fk_komentar_pengumuman` FOREIGN KEY (`pengumuman_id`) REFERENCES `pengumuman` (`id`) ON DELETE CASCADE,
   CONSTRAINT `fk_komentar_pengguna` FOREIGN KEY (`pengguna_id`) REFERENCES `pengguna` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 COMMIT;
