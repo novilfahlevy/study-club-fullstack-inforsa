@@ -25,6 +25,6 @@ CREATE TABLE `pengumuman` (
 
 INSERT INTO `pengumuman` (`id`, `judul`, `slug`, `tanggal`, `deskripsi`, `belum_dibaca`, `kategori`) VALUES
 (1, 'Pendaftaran Study Club Fullstack', 'pendaftaran-study-club-fullstack', '2026-03-05 00:00:00', 'Ayo bergabung dan tingkatkan kemampuan web development kalian bersama INFORSA!', 1, 'akademik'),
-(2, 'Malam Keakraban', 'malam-keakraban', '2026-03-21 00:00:00', 'Jangan lewatkan kesempatan untuk bersenang-senang dan mempererat persaudaraan di Malam Keakraban INFORSA!', 0, 'akademik');
+(2, 'Malam Keakraban', 'malam-keakraban', '2026-03-21 00:00:00', 'Jangan lewatkan kesempatan untuk bersenang-senang dan mempererat persaudaraan di Malam Keakraban INFORSA!', 0, 'organisasi');
 
 COMMIT;
