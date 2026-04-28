@@ -1,7 +1,7 @@
 <?php
 
 require './database/koneksi.php';
-require './database/pengumuman.php';
+require './database/main.php';
 
 $slug = isset($_GET['slug']) ? $_GET['slug'] : null;
 
