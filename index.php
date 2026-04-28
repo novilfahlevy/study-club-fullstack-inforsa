@@ -10,6 +10,23 @@ if ($kategori) {
   $pengumuman = getPengumuman($conn);
 }
 
+// $pengumuman = [
+//   [
+//     "judul" => "Pendaftaran Study Club Fullstack 2026",
+//     "tanggal" => "05 Maret 2026",
+//     "deskripsi" => "Ayo bergabung dengan Study Club Fullstack dan tingkatkan kemampuan codingmu!",
+//     "link" => "https://si.ft.unmul.ac.id",
+//     "belum_dibaca" => 1
+//   ],
+//   [
+//     "judul" => "Malam Keakraban 2026",
+//     "tanggal" => "26 Januari 2026",
+//     "deskripsi" => "Malam Keakraban (Makrab) adalah acara tahunan yang diadakan untuk blablabla...",
+//     "link" => "https://si.ft.unmul.ac.id",
+//     "belum_dibaca" => 0
+//   ]
+// ];
+
 ?>
 
 <!doctype html>
